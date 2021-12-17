@@ -1,0 +1,71 @@
+#!/bin/bash
+# telegram basic send module
+# this script just send 
+# location file: 
+#     sudo cp telegram_send /usr/bin/telegram-send
+#     sudo chmod +x /usr/bin/telegram-send
+# conf=telegram_send.conf
+#   this file contains bottoken and telegram users and groups
+#   BOT_TOKEN is number you get when telegramuser is created
+#   Usage: telegram_send bert "text message"
+
+basedir=$(dirname "$0")
+conf=$basedir/telegram_send.conf
+if [ -f "$conf" ]; then
+  source $conf
+else
+  echo ""
+  echo "Config file: " $conf " does not exist!"
+  echo "Just created the file, plz update."
+  echo ""
+  touch $conf
+  echo "# telegram friendly name = telegram code" >> $conf
+  echo "BOT_TOKEN=" >> $conf
+  echo "user1=123456" >> $conf
+  exit 0
+fi
+
+if [ "$1" == "-h" ]; then
+  # Help
+  echo ""
+  echo "Help `basename $0`"
+  echo "Usage: `basename $0` target_user \"text message\""
+  echo ""
+  exit 0
+fi
+
+if [ $1 ]; then
+  typeset -n target=$1
+  if [ -z $target ]; then
+    echo "unknown target!"
+    exit 0
+  fi
+else
+  # Help
+  echo ""
+  echo "Help `basename $0`"
+  echo "Usage: `basename $0` \"text message\""
+  echo ""
+  exit 0
+fi
+
+if [ -z "$2" ]
+  then
+    # Missing text
+    echo ""
+    echo "Error: Missing argument"
+    echo "Usage: `basename $0` target_user \"text message\""
+    echo ""
+    exit 0
+fi
+
+if [ "$#" -gt 2 ]; then
+    # Multiple arguments
+    echo ""
+    echo "Error: To many argument allowed."
+    echo "Usage: `basename $0` target_user \"text message\""
+    echo ""
+    exit 0
+fi
+
+curl -s --data "text=$2" --data "chat_id=$target" 'https://api.telegram.org/bot'$BOT_TOKEN'/sendMessage' > /dev/null

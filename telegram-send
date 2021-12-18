@@ -4,13 +4,13 @@
 # location file: 
 #     sudo cp telegram_send /usr/bin/telegram-send
 #     sudo chmod +x /usr/bin/telegram-send
-# conf=telegram_send.conf
+# conf=telegram-send.conf
 #   this file contains bottoken and telegram users and groups
 #   BOT_TOKEN is number you get when telegramuser is created
 #   Usage: telegram_send bert "text message"
 
 basedir=$(dirname "$0")
-conf=$basedir/telegram_send.conf
+conf=$basedir/telegram-send.conf
 if [ -f "$conf" ]; then
   source $conf
 else
@@ -25,10 +25,26 @@ else
   exit 0
 fi
 
-if [ "$1" == "-h" ]; then
+if [ "$1" == "-c" ]; then
   # Help
   echo ""
+  echo "Known contacts in: $conf"
+  echo ""
+  while read line; do    
+    echo $line    
+  done < $conf
+  echo ""
+  exit 0
+fi
+
+if [ "$1" == "-h" ]; then
+  # Help
   echo "Help `basename $0`"
+  echo ""
+  echo "<options>"
+  echo "-h  = Help"
+  echo "-c  = List contacts"
+  echo ""
   echo "Usage: `basename $0` target_user \"text message\""
   echo ""
   exit 0

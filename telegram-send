@@ -8,6 +8,9 @@
 #   this file contains bottoken and telegram users and groups
 #   BOT_TOKEN is number you get when telegramuser is created
 #   Usage: telegram_send bert "text message"
+#
+# https://github.com/bertman80/telegram_send
+# made by: Bert Nieuwenampsen (2021)
 
 basedir=$(dirname "$0")
 conf=$basedir/telegram-send.conf

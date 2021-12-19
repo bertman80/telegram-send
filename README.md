@@ -18,7 +18,10 @@ telegram-send -c (view contactlist)<br>
 <br>
 you can now send a telegram:<br>
 telegram-send bertman "hello"<br>
-telegram-send michel "hello"
+telegram-send michel "hello"<br>
+
+<br>
+Example scripts: https://github.com/bertman80/telegram
 
 **Error**<br>
 When you get this error, you need to run it first as sudo to create a conf file<br>

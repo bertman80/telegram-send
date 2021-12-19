@@ -3,8 +3,8 @@ basic script to send telegram messages
 
 **Install**<br>
 copy this file in the BIN directory and give it executable rights<br>
-sudo cp telegram-send /usr/bin/telegram-send<br>
-sudo chmod +x /usr/bin/telegram-send
+<code>sudo cp telegram-send /usr/bin/telegram-send</code><br>
+<code>sudo chmod +x /usr/bin/telegram-send</code>
 
 **First run**<br>
 sudo telegram_send<br>
@@ -13,12 +13,12 @@ this file needs to contains the Telegram ID for this bot (https://www.trebnie.nl
 you can add user to this file with there Telegram ID
 
 **Execute**<br>
-telegram-send -h (help)<br>
-telegram-send -c (view contactlist)<br>
+<code>telegram-send -h</code> (help)<br>
+<code>telegram-send -c</code> (view contactlist)<br>
 <br>
 you can now send a telegram:<br>
-telegram-send bertman "hello"<br>
-telegram-send michel "hello"<br>
+<code>telegram-send bertman "hello"</code><br>
+<code>telegram-send michel "hello"</code><br>
 
 <br>
 Example scripts: https://github.com/bertman80/telegram

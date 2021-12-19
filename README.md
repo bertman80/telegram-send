@@ -7,7 +7,7 @@ copy this file in the BIN directory and give it executable rights<br>
 <code>sudo chmod +x /usr/bin/telegram-send</code>
 
 **First run**<br>
-<code>sudo telegram_send</code><br>
+<code>sudo telegram-send</code><br>
 a config file will be created: <b>telegram-send.conf</b><br>
 this file needs to contains the Telegram ID for this bot (https://www.trebnie.nl/ict-tips/telegram/)<br>
 you can add user to this file with there Telegram ID

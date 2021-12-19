@@ -1,4 +1,4 @@
-# telegram_send<br>
+# telegram-send<br>
 basic script to send telegram messages
 
 **Install**<br>

@@ -1,16 +1,21 @@
 #!/bin/bash
-# telegram basic send module
-# this script just send 
-# location file: 
-#     sudo cp telegram-send /usr/bin/telegram-send
-#     sudo chmod +x /usr/bin/telegram-send
-# conf=telegram-send.conf
-#   this file contains bottoken and telegram users and groups
-#   BOT_TOKEN is number you get when telegramuser is created
-#   Usage: telegram-send bert "text message"
-#
-# https://github.com/bertman80/telegram_send
-# made by: Bert Nieuwenampsen (2021)
+"""
+telegram basic send module
+this script just send 
+location file: 
+  sudo cp telegram-send /usr/bin/telegram-send
+  sudo chmod +x /usr/bin/telegram-send
+conf=telegram-send.conf
+  this file contains bottoken and telegram users and groups
+  BOT_TOKEN is number you get when telegramuser is created
+  Usage: telegram-send bert "text message"
+
+
+https://github.com/bertman80/telegram_send
+made by: Bert Nieuwenampsen (2021)
+https://www.trebnie.nl
+"""
+
 version=1.0.1
 
 basedir=$(dirname "$0")
